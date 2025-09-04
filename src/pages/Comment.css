@@ -1,0 +1,38 @@
+.comment-container {
+  padding: 1rem;
+}
+
+.comment-form,
+.edit-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.comment-list {
+  margin-top: 1rem;
+}
+
+.comment-item {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0;
+}
+
+
+.mention {
+  background-color: #e6f2ff;
+  color: #007bff;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Segoe UI', sans-serif;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+.mention:hover {
+  background-color: #d0e7ff;
+}
+
+

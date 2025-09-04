@@ -1,0 +1,284 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1d4ed8;
+  margin-bottom: 2rem;
+}
+
+.todos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.no-tasks {
+  text-align: center;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.todo-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 5px solid #3b82f6;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.todo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.todo-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.todo-description {
+  color: #4b5563;
+  margin: 0.5rem 0;
+}
+
+.todo-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit-btn { background: #f59e0b; color: white; }
+.edit-btn:hover { background: #d97706; }
+
+.delete-btn { background: #ef4444; color: white; }
+.delete-btn:hover { background: #b91c1c; }
+
+.share-btn { background: #10b981; color: white; }
+.share-btn:hover { background: #047857; }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal input, .modal textarea, .modal select {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.cancel-btn { background: #9ca3af; color: white; }
+.cancel-btn:hover { background: #6b7280; }
+
+.save-btn { background: #3b82f6; color: white; }
+.save-btn:hover { background: #1e40af; }
+
+
+
+.calendar-container {
+  position: relative;
+  display: flex;
+}
+
+.calendar-toggle-area {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-left:90px;
+}
+
+.calendar-toggle-area:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-icon {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.calendar-dropdown {
+  position:absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 5px; /* Add some space between the icon and calendar */
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+
+
+.edit-custom-fields {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  max-height: 200px; /* Example: set a fixed height for a nested scrollbar */
+  overflow-y: auto;
+}
+
+/* Style for individual custom field items */
+.edit-custom-field-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* Container for the scrollable content inside the modal */
+.modal-content-scrollable {
+    max-height: 70vh; /* Limits the height to 70% of the viewport height */
+    overflow-y: auto; /* Adds a vertical scrollbar when content overflows */
+    padding-right: 15px; /* Adds space for the scrollbar to prevent content overlap */
+    margin-bottom: 15px; /* Adds space between content and action buttons */
+}
+
+/* Optional: Modern styling for the scrollbar (for WebKit browsers like Chrome/Safari) */
+
+/* The scrollbar track */
+.modal-content-scrollable::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+/* The scrollbar thumb (the draggable part) */
+.modal-content-scrollable::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+/* The scrollbar thumb on hover */
+.modal-content-scrollable::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+}
+
+
+
+
+
+
+.todo-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  /* Prevent overflow */
+  /* max-height: 250px;       */
+  /* overflow-y: auto;
+  overflow-x: hidden;      */
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.todo-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #333;
+  cursor: pointer;
+}
+
+.todo-description {
+  font-size: 0.875rem;
+  color: #555;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.custom-fields {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.no-tasks {
+  font-style: italic;
+  color: #999;
+  text-align: center;
+  margin: 1rem 0;
+}
