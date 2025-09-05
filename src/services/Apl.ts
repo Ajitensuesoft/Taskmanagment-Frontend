@@ -172,7 +172,7 @@ export const viewNotification = async (id: string) => {
 
 export const HistoryDetails=async(workspaceId?:string)=>{
   try{
-const res=await axios.get(`${API_URLi}/task/history/${workspaceId}`);
+const res=await axios.get(`${API_URLi}/task/history/${workspaceId}`,{withCredentials:true});
 console.log("history",res.data);
 return res.data
   }
@@ -184,7 +184,7 @@ console.log("history",err)
 
 export const DeleteHistory=async(id:string)=>{
   try{
-const res=await axios.delete(`${API_URLi}/task/history/delete?id=${id}`);
+const res=await axios.delete(`${API_URLi}/task/history/delete?id=${id}`,{withCredentials:true});
 console.log("history",res.data);
 return res.data
   }
@@ -198,7 +198,7 @@ console.log("history",err)
 export const createCsv=async(parsedData:any[])=>{
   console.log("parsedData in api",parsedData);
   try{
-const res=await axios.post(`${API_URLi}/task/csvdata`,parsedData);
+const res=await axios.post(`${API_URLi}/task/csvdata`,parsedData,{withCredentials:true});
 console.log("history",res.data);
 return res.data
   }
@@ -215,7 +215,7 @@ console.log("csvdata",err)
 export const importantupdate=async(id:string,data:boolean)=>{
 console.log('data of important',data,id);
   try{
- const res=await axios.post(`${API_URLi}/task/importantupdate/${id}`,{isImprtant:data})
+ const res=await axios.post(`${API_URLi}/task/importantupdate/${id}`,{isImprtant:data},{withCredentials:true})
  console.log("important",res);
  return res
   }
@@ -305,7 +305,7 @@ export const deleteChecklistItem = async (checklistItemId: string) => {
 export const archieved=async(id:string,data:any)=>{
   console.log("archieved data in fronted api",data,id);
   try{
-const res=await axios.put(`${API_URLi}/task/archieved/${id}`,{data});
+const res=await axios.put(`${API_URLi}/task/archieved/${id}`,{data},{withCredentials:true});
 console.log("archieved",res.data);
 return res.data
   }
@@ -334,7 +334,7 @@ console.log("err",err);
 export const workdataupdate=async(id:string,data:any)=>{
   console.log("workdataupdate data",data,id);
   try{
-const res=await axios.put(`${API_URLi}/task/workupdate/${id}`,data);
+const res=await axios.put(`${API_URLi}/task/workupdate/${id}`,data,{withCredentials:true});
 console.log("workdataupdate",res.data);
 return res.data
   }
@@ -390,7 +390,7 @@ export const workChecklistDelete = async (id: string) => {
 export const createdinvited=async(id:string,data:any)=>{
   console.log("data of created id",data);
   try{
-const res=await axios.post(`${API_URLi}/task/createdinvited/${id}`,data);
+const res=await axios.post(`${API_URLi}/task/createdinvited/${id}`,data,{withCredentials:true});
 console.log("createdinvited",res.data);
 return res.data
   }
@@ -418,7 +418,7 @@ console.log("getinvited",err)
 export const showallcomment=async(taskId:string)=>{
   console.log("id of showallcomment",taskId);
   try{
-const res=await axios.get(`${API_URLi}/task/allcomment/${taskId}`);
+const res=await axios.get(`${API_URLi}/task/allcomment/${taskId}`,{withCredentials:true});
 console.log("showallcomment",res.data);
 return res.data
   }
@@ -431,7 +431,7 @@ console.log("showallcomment",err)
 export const createComment=async(id:string,data:any)=>{
   console.log("data of createcomment",data,id);
   try{
-const res=await axios.post(`${API_URLi}/task/comment/${id}`,data);
+const res=await axios.post(`${API_URLi}/task/comment/${id}`,data,{withCredentials:true});
 console.log("createComment",res.data);
 return res.data
   }
@@ -444,7 +444,7 @@ console.log("createComment",err)
 export const deleteComment=async(id:string)=>{
   console.log("id of deletecomment",id);
   try{
-const res=await axios.delete(`${API_URLi}/task/comment/${id}`);
+const res=await axios.delete(`${API_URLi}/task/comment/${id}`,{withCredentials:true});
 console.log("deleteComment",res.data);
 return res.data
   }
@@ -459,7 +459,7 @@ console.log("deleteComment",err)
 export const updateComment=async(data:any,editingId:string)=>{
   console.log("data of updatecomment",data,editingId);
   try{
-const res=await axios.put(`${API_URLi}/task/comment/${editingId}`,data);
+const res=await axios.put(`${API_URLi}/task/comment/${editingId}`,data,{withCredentials:true});
 console.log("updateComment",res.data);
 return res.data
   }
@@ -479,7 +479,7 @@ console.log("updateComment",err)
 export const createWorkspace=async(data:any)=>{
   console.log("data of createWorkspace",data);
   try{
-const res=await axios.post(`${API_URLi}/task/createworkspace`,data);
+const res=await axios.post(`${API_URLi}/task/createworkspace`,data,{withCredentials:true});
 console.log("createWorkspace",res.data);
 return res.data
   }
@@ -493,7 +493,7 @@ console.log("createWorkspace",err)
 export const  getworkspace=async()=>{
   console.log("id of getworkspace");
   try{
-const res=await axios.get(`${API_URLi}/getworkspace`);
+const res=await axios.get(`${API_URLi}/getworkspace`,{withCredentials:true});
 console.log("getworkspace",res.data);
 return res.data
   }
@@ -508,7 +508,7 @@ console.log("getworkspace",err)
 export const deleteWorkspace=async(workspaceId:string)=>{
   console.log("id of deleteWorkspace",workspaceId);
   try{
-const res=await axios.delete(`${API_URLi}/deleteworkspace/${workspaceId}`);
+const res=await axios.delete(`${API_URLi}/deleteworkspace/${workspaceId}`,{withCredentials:true});
 console.log("deleteWorkspace",res.data);
 return res.data
   }
@@ -522,7 +522,7 @@ console.log("deleteWorkspace",err)
 export const inviteuser=async(data:any)=>{
   console.log("data of inviteuser",data);
   try{
-const res=await axios.post(`${API_URLi}/inviteruser`,data);
+const res=await axios.post(`${API_URLi}/inviteruser`,data,{withCredentials:true});
 console.log("inviteuser",res.data);
 return res.data
   }
@@ -553,7 +553,7 @@ console.log("acceptinvite",err)
 export const inviterRole=async(receiverId:string)=>{
 console.log("id of inviterole",receiverId);
   try{
-const res=await axios.get(`${API_URLi}/invitesUserole/${receiverId}`);
+const res=await axios.get(`${API_URLi}/invitesUserole/${receiverId}`,{withCredentials:true});
 console.log("inviteuser",res.data);
 return res.data
   }
@@ -586,7 +586,7 @@ export const tagemail = async (value: any) => {
 export const startTime=async(id:string)=>{
   console.log("id of startTime",id);
   try{
-const res=await axios.post(`${API_URLi}/task/timer/start/${id}`);
+const res=await axios.post(`${API_URLi}/task/timer/start/${id}`,{withCredentials:true});
 console.log("startTime",res.data);
 return res.data
   }
@@ -599,7 +599,7 @@ console.log("startTime",err)
 export const stopTime=async(id:string)=>{
   console.log("id of stopTime",id);
   try{
-const res=await axios.post(`${API_URLi}/task/timer/stop/${id}`);
+const res=await axios.post(`${API_URLi}/task/timer/stop/${id}`,{withCredentials:true});
 console.log("stopTime",res.data);
 return res.data
   }
@@ -612,7 +612,7 @@ console.log("stopTime",err)
 export const resetTime=async(id:string)=>{
   console.log("id of resetTime",id);
   try{
-const res=await axios.post(`${API_URLi}/task/timer/reset/${id}`);
+const res=await axios.post(`${API_URLi}/task/timer/reset/${id}`,{withCredentials:true});
 console.log("resetTime",res.data);
 return res.data
   }
@@ -626,7 +626,7 @@ console.log("resetTime",err)
 export const endTime=async(id:string)=>{
   console.log("id of endTime",id);
   try{
-const res=await axios.post(`${API_URLi}/task/timer/end/${id}`);
+const res=await axios.post(`${API_URLi}/task/timer/end/${id}`,{withCredentials:true});
 console.log("endTime",res.data);
 return res.data
   }
@@ -652,7 +652,7 @@ export const getTimerByTodo = async (id: string) => {
 export const allWorkspaceStatus=async(workspaceId:string)=>{
   console.log("id of allWorkspaceStatus",workspaceId);
   try{
-const res=await axios.get(`${API_URLi}/task/anylitical/${workspaceId}`);
+const res=await axios.get(`${API_URLi}/task/anylitical/${workspaceId}`,{withCredentials:true});
 console.log("allWorkspaceStatus",res.data);
 return res.data
   }
