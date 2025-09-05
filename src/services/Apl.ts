@@ -538,7 +538,7 @@ console.log("inviteuser",err)
 export const acceptinvite=async(invitationToken:any)=>{
   console.log("data of acceptinvite",invitationToken);
   try{
-const res=await axios.post(  `https://task-management-backend-eta-taupe.vercel.app/invite/accept/${invitationToken}`,{},{withCredentials:true});
+const res=await axios.post(  `https://task-management-backend-eta-taupe.vercel.app/invite/accept/${invitationToken}`,{withCredentials:true});
 console.log("acceptinvite",res.data);
 return res.data
   }
